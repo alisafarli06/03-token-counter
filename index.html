@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>LLM Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+    <h1>LLM Dashboard</h1>
+    <p>A developer's guide to comparing the most popular Large Language Models available today.</p>
+</header>
+
+<nav>
+    <a href="#what-is-llm">What is an LLM?</a>
+    <a href="#what-is-token">What is a Token?</a>
+    <a href="#comparison">Comparison</a>
+    <a href="#model-cards">Model Cards</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="tokenCounter.html">Token Counter</a>
+</nav>
+
+<main>
+
+    <section id="what-is-llm">
+        <h2>What is an LLM?</h2>
+        <p>
+            <strong>LLM</strong> stands for <strong>Large Language Model</strong>. It is a type of artificial
+            intelligence trained on vast amounts of text from books, websites, code, and other sources.
+            During training, the model learns statistical patterns in language — how words and phrases
+            tend to follow one another.
+        </p>
+        <p>
+            At its core, an LLM works by predicting the next token given everything that came before.
+            When you send a prompt, the model generates a response one token at a time, choosing the
+            most likely continuation at each step.
+        </p>
+        <p>
+            Two widely used real-world examples are <strong>GPT-5.4</strong> by OpenAI and
+            <strong>Claude Sonnet 4.6</strong> by Anthropic.
+        </p>
+    </section>
+
+    <section id="what-is-token">
+        <h2>What is a Token?</h2>
+        <p>
+            A <strong>token</strong> is a chunk of text that an LLM reads and writes — not necessarily
+            a whole word. On average, one token is roughly 3–4 characters, or about three-quarters of
+            a word in English.
+        </p>
+        <p>
+            Tokens matter because they are the unit used to measure <strong>context windows</strong>
+            (how much text a model can handle in one request) and <strong>pricing</strong>
+            (providers charge per million input and output tokens).
+        </p>
+        <p>
+            For example, the sentence <em>"Hello, world!"</em> might be tokenized as:
+            <code>["Hello", ",", " world", "!"]</code> — four tokens in total.
+        </p>
+        <p>
+            Tokenization also varies by language. The same idea in Azerbaijani often requires
+            <strong>more tokens</strong> than in English because subword splits are less efficient
+            for languages with less training data. That means Azerbaijani text can consume more of
+            your context window and cost more per message.
+        </p>
+    </section>
+
+    <section id="comparison">
+        <h2>LLM Comparison</h2>
+        <table>
+            <caption>LLM API pricing and capabilities as of May 2026. Prices are per 1 million tokens.</caption>
+            <thead>
+            <tr>
+                <th>Model</th>
+                <th>Provider</th>
+                <th>Context Window</th>
+                <th>Input Price (per 1M tokens)</th>
+                <th>Output Price (per 1M tokens)</th>
+                <th>Reasoning</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>GPT-4o</td>
+                <td>OpenAI</td>
+                <td>128K</td>
+                <td>$2.50</td>
+                <td>$10.00</td>
+                <td class="reasoning-no">✗</td>
+            </tr>
+            <tr>
+                <td>Claude Sonnet 4.6</td>
+                <td>Anthropic</td>
+                <td>1M</td>
+                <td>$3.00</td>
+                <td>$15.00</td>
+                <td class="reasoning-yes">✓</td>
+            </tr>
+            <tr>
+                <td>Claude Opus 4.6</td>
+                <td>Anthropic</td>
+                <td>200K</td>
+                <td>$5.00</td>
+                <td>$25.00</td>
+                <td class="reasoning-yes">✓</td>
+            </tr>
+            <tr>
+                <td>Gemini 2.5 Flash</td>
+                <td>Google</td>
+                <td>1M</td>
+                <td>$0.30</td>
+                <td>$2.50</td>
+                <td class="reasoning-yes">✓</td>
+            </tr>
+            <tr>
+                <td>DeepSeek V3.2</td>
+                <td>DeepSeek</td>
+                <td>128K</td>
+                <td>$0.28</td>
+                <td>$0.42</td>
+                <td class="reasoning-yes">✓</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="model-cards">
+        <h2>Model Cards</h2>
+        <div class="cards-grid">
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-provider">OpenAI</span>
+                    <span class="card-reasoning reasoning-no">No Reasoning</span>
+                </div>
+                <h3 class="card-name">GPT-4o</h3>
+                <p class="card-tagline">Best for fast, general-purpose tasks and multimodal inputs.</p>
+                <ul class="card-specs">
+                    <li><span class="spec-label">Context</span><span class="spec-value">128K</span></li>
+                    <li><span class="spec-label">Input</span><span class="spec-value">$2.50 / 1M</span></li>
+                    <li><span class="spec-label">Output</span><span class="spec-value">$10.00 / 1M</span></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-provider">Anthropic</span>
+                    <span class="card-reasoning reasoning-yes">Reasoning</span>
+                </div>
+                <h3 class="card-name">Claude Sonnet 4.6</h3>
+                <p class="card-tagline">Best for complex analysis, coding, and long documents.</p>
+                <ul class="card-specs">
+                    <li><span class="spec-label">Context</span><span class="spec-value">1M</span></li>
+                    <li><span class="spec-label">Input</span><span class="spec-value">$3.00 / 1M</span></li>
+                    <li><span class="spec-label">Output</span><span class="spec-value">$15.00 / 1M</span></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-provider">Anthropic</span>
+                    <span class="card-reasoning reasoning-yes">Reasoning</span>
+                </div>
+                <h3 class="card-name">Claude Opus 4.6</h3>
+                <p class="card-tagline">Best for the most demanding reasoning and research tasks.</p>
+                <ul class="card-specs">
+                    <li><span class="spec-label">Context</span><span class="spec-value">200K</span></li>
+                    <li><span class="spec-label">Input</span><span class="spec-value">$5.00 / 1M</span></li>
+                    <li><span class="spec-label">Output</span><span class="spec-value">$25.00 / 1M</span></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-provider">Google</span>
+                    <span class="card-reasoning reasoning-yes">Reasoning</span>
+                </div>
+                <h3 class="card-name">Gemini 2.5 Flash</h3>
+                <p class="card-tagline">Best for high-volume, cost-sensitive production workloads.</p>
+                <ul class="card-specs">
+                    <li><span class="spec-label">Context</span><span class="spec-value">1M</span></li>
+                    <li><span class="spec-label">Input</span><span class="spec-value">$0.30 / 1M</span></li>
+                    <li><span class="spec-label">Output</span><span class="spec-value">$2.50 / 1M</span></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-provider">DeepSeek</span>
+                    <span class="card-reasoning reasoning-yes">Reasoning</span>
+                </div>
+                <h3 class="card-name">DeepSeek V3.2</h3>
+                <p class="card-tagline">Best for budget-conscious teams needing frontier-level performance.</p>
+                <ul class="card-specs">
+                    <li><span class="spec-label">Context</span><span class="spec-value">128K</span></li>
+                    <li><span class="spec-label">Input</span><span class="spec-value">$0.28 / 1M</span></li>
+                    <li><span class="spec-label">Output</span><span class="spec-value">$0.42 / 1M</span></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Sources:
+        <a href="https://platform.openai.com/docs/pricing" target="_blank">OpenAI</a> ·
+        <a href="https://www.anthropic.com/pricing" target="_blank">Anthropic</a> ·
+        <a href="https://ai.google.dev/pricing" target="_blank">Google Gemini</a> ·
+        <a href="https://platform.deepseek.com/api-docs/pricing" target="_blank">DeepSeek</a> ·
+        <a href="https://artificialanalysis.ai" target="_blank">Artificial Analysis</a>
+    </p>
+</footer>
+
+</body>
+</html>

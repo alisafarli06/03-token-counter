@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Token Counter — LLM Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+    <h1>Token Counter</h1>
+    <p>Estimate how many tokens your English text would use when sent to an AI model.</p>
+</header>
+
+<nav>
+    <a href="index.html">Dashboard</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="tokenCounter.html">Token Counter</a>
+</nav>
+
+<main>
+
+    <section id="tokenCounter">
+        <h2>Token Counter</h2>
+        <p>Paste any English text below to estimate how many tokens it would consume when sent to an AI model.</p>
+        <textarea id="inputText" rows="6" placeholder="Type or paste your text here..."></textarea>
+        <p id="result">Estimated tokens: 0</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Sources:
+        <a href="https://platform.openai.com/docs/pricing" target="_blank">OpenAI</a> ·
+        <a href="https://www.anthropic.com/pricing" target="_blank">Anthropic</a> ·
+        <a href="https://ai.google.dev/pricing" target="_blank">Google Gemini</a> ·
+        <a href="https://platform.deepseek.com/api-docs/pricing" target="_blank">DeepSeek</a> ·
+        <a href="https://artificialanalysis.ai" target="_blank">Artificial Analysis</a>
+    </p>
+</footer>
+
+<script src="tokenCounter.js"></script>
+</body>
+</html>

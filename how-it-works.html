@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>How It Works — LLM Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+    <h1>How It Works</h1>
+    <p>A step-by-step look at how a Large Language Model processes your prompt.</p>
+</header>
+
+<nav>
+    <a href="index.html">Dashboard</a>
+    <a href="index.html#what-is-llm">What is an LLM?</a>
+    <a href="index.html#what-is-token">What is a Token?</a>
+    <a href="index.html#comparison">Comparison</a>
+    <a href="index.html#model-cards">Model Cards</a>
+    <a href="tokenCounter.html">Token Counter</a>
+</nav>
+
+<main>
+
+    <section id="timeline">
+        <h2>From Prompt to Response</h2>
+        <p class="timeline-intro">Every time you send a message to an LLM, it goes through these six stages in milliseconds.</p>
+
+        <ol class="timeline">
+
+            <li class="timeline-step">
+                <div class="step-marker">1</div>
+                <div class="step-content">
+                    <h3>User Input</h3>
+                    <p>The user types a prompt into the interface. This raw text is the starting point for everything that follows.</p>
+                </div>
+            </li>
+
+            <li class="timeline-step">
+                <div class="step-marker">2</div>
+                <div class="step-content">
+                    <h3>Tokenisation</h3>
+                    <p>The text is split into tokens — small chunks of roughly 3–4 characters each. The model never sees raw words, only these numeric token IDs.</p>
+                </div>
+            </li>
+
+            <li class="timeline-step">
+                <div class="step-marker">3</div>
+                <div class="step-content">
+                    <h3>Embedding</h3>
+                    <p>Each token ID is converted into a high-dimensional vector — a list of numbers that encodes the token's meaning and position in the sequence.</p>
+                </div>
+            </li>
+
+            <li class="timeline-step">
+                <div class="step-marker">4</div>
+                <div class="step-content">
+                    <h3>Attention Layers</h3>
+                    <p>The vectors pass through many Transformer layers. Each layer uses an "attention" mechanism to let every token look at every other token and update its representation based on context.</p>
+                </div>
+            </li>
+
+            <li class="timeline-step">
+                <div class="step-marker">5</div>
+                <div class="step-content">
+                    <h3>Prediction</h3>
+                    <p>After the final layer, the model produces a probability distribution over its entire vocabulary — essentially a ranked list of every possible next token.</p>
+                </div>
+            </li>
+
+            <li class="timeline-step">
+                <div class="step-marker">6</div>
+                <div class="step-content">
+                    <h3>Output Generation</h3>
+                    <p>The model samples from that distribution to pick the next token, appends it to the sequence, and repeats the whole process until it generates an end-of-sequence token or hits the output limit.</p>
+                </div>
+            </li>
+
+        </ol>
+    </section>
+
+</main>
+
+<footer>
+    <p>Sources:
+        <a href="https://platform.openai.com/docs/pricing" target="_blank">OpenAI</a> ·
+        <a href="https://www.anthropic.com/pricing" target="_blank">Anthropic</a> ·
+        <a href="https://ai.google.dev/pricing" target="_blank">Google Gemini</a> ·
+        <a href="https://artificialanalysis.ai" target="_blank">Artificial Analysis</a>
+    </p>
+</footer>
+
+</body>
+</html>
